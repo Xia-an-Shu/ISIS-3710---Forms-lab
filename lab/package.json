@@ -1,4 +1,11 @@
 {
+  "name": "lab",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
     "react-bootstrap": "^2.10.1"
   }
