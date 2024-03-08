@@ -14,6 +14,10 @@ function App() {
     validatePassword(e.target.value);
   };
 
+  const handleSelectChange = ((e) => {
+    setFormValues({...formValues, favClass: e.target.value})
+  });
+
   const validateEmail = (email) => {
     const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     setValidationStates({ ...validationStates, emailState: re.test(email) });
@@ -26,6 +30,7 @@ function App() {
 
   const clickSubmit = () => {
     validateEmail(formValues.email);
+    validatePassword(formValues.password);
   };
 
   return (
