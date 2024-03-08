@@ -19,11 +19,12 @@ function App() {
   });
 
   const validateEmail = (email) => {
-    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    const re = /^(([^<>()[\\]\\.,;:\\s@\\\"]+(\\.[^<>()[\\]\\.,;:\\s@\\\"]+)*)|(\\\".+\\\"))@(([^<>()[\\]\\.,;:\\s@\\\"]+\\.)+[^<>()[\\]\\.,;:\\s@\\\"]{2,})$/i;
     setValidationStates({ ...validationStates, emailState: re.test(email) });
   };
 
   const validatePassword = (password) => {
+    // Password format: At least 9 characters long, with numbers and letters
     const re = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{9,}$/;
     setValidationStates({ ...validationStates, passwordState: re.test(password) });
   };
