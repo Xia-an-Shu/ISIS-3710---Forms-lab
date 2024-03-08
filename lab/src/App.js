@@ -8,6 +8,8 @@ function App() {
 
   const [formValues, setFormValues] = useState({email:"", password:"", favClass:"1"})
 
+  const [validationStates, setValidationStates] = useState({emailState: true, passwordState: true})
+
   const handleEmailChange = ((e) => {
     setFormValues({...formValues, email: e.target.value})
   });
